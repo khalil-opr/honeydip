@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HoneyDip | Pure Honey, Ready in a Spoon</title>
+<meta name="description" content="HoneyDip: pure honey pre-filled in sealed spoons. Peel, dip, stir, sip. 10 spoons × 10 g for Rs 399.">
+<meta name="theme-color" content="#0d0804">
+<meta property="og:title" content="HoneyDip | Pure Honey, Ready in a Spoon">
+<meta property="og:description" content="Pure honey pre-filled in sealed spoons. Peel. Dip. Stir. Sip.">
+<meta property="og:image" content="assets/pack.webp">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath d='M32 4 C32 4 12 30 12 42 a20 20 0 0 0 40 0 C52 30 32 4 32 4Z' fill='%23E8B547'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,500;0,6..96,700;1,6..96,500&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="preload" as="image" href="assets/pack.webp">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<!-- loader -->
+<div class="loader" id="loader" aria-hidden="true">
+  <div class="loader-inner">
+    <div class="loader-word" id="loaderWord">HoneyDip</div>
+    <div class="loader-row"><span>Filling the spoons</span><span id="loaderCount">0%</span></div>
+  </div>
+</div>
+
+<div class="grain" aria-hidden="true"></div>
+<div class="progress" id="progress" aria-hidden="true"></div>
+<div class="cursor" id="cursor" aria-hidden="true"><i></i></div>
+<canvas class="embers" id="embers" aria-hidden="true"></canvas>
+
+<header class="site-header" id="header">
+  <div class="wrap header-row">
+    <a class="brand" href="#top" data-link><span class="brand-drop"></span><span>Honey<b>Dip</b></span></a>
+    <nav class="main-nav" aria-label="Main">
+      <a href="#product" data-link>Product</a>
+      <a href="#how" data-link>How it works</a>
+      <a href="#research" data-link>Research</a>
+      <a href="#quality" data-link>Quality</a>
+      <a href="#price" data-link>Price</a>
+    </nav>
+    <a class="btn btn-gold btn-sm hide-mob" href="#order" data-link>Order now</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false"><span></span></button>
+  </div>
+</header>
+<div class="mobile-nav" id="mobileNav">
+  <a href="#product" style="--i:0" data-link>Product</a>
+  <a href="#how" style="--i:1" data-link>How it works</a>
+  <a href="#research" style="--i:2" data-link>Research</a>
+  <a href="#quality" style="--i:3" data-link>Quality</a>
+  <a href="#price" style="--i:4" data-link>Price</a>
+  <a href="#order" style="--i:5" data-link>Order</a>
+</div>
+
+<main id="main">
+
+<!-- HERO (pinned) -->
+<section class="hero scene" id="top" data-scene="hero">
+  <div class="sticky">
+    <div class="hex-bg" aria-hidden="true"></div>
+    <div class="hero-glow" id="heroGlow" aria-hidden="true"></div>
+    <div class="wrap hero-grid">
+      <div class="hero-copy" id="heroCopy">
+        <p class="eyebrow intro-in" style="--d:.1s">Pure honey · Ready spoons</p>
+        <h1 class="display hero-title" data-split>Honey, <em>ready</em> in a spoon.</h1>
+        <p class="lead intro-in" style="--d:.9s">Pure Sidr &amp; Acacia honey, pre-filled and sealed in single spoons. No sticky jar, no mess. Just peel, dip, stir and sip.</p>
+        <div class="hero-cta intro-in" style="--d:1.1s">
+          <a class="btn btn-gold magnetic" href="#order" data-link>Get a pack · Rs 399</a>
+          <a class="btn btn-ghost magnetic" href="#how" data-link>See how it works</a>
+        </div>
+        <ul class="hero-facts intro-in" style="--d:1.3s">
+          <li><b>10</b><span>spoons</span></li>
+          <li><b>10 g</b><span>each</span></li>
+          <li><b>100%</b><span>pure honey</span></li>
+        </ul>
+      </div>
+      <div class="hero-art" id="heroArt">
+        <div class="halo" aria-hidden="true"></div>
+        <img class="hero-pack" id="heroPack" src="assets/pack.webp" alt="HoneyDip pack of 10 honey spoons with two spoons in front" width="1274" height="615">
+        <div class="tag tag-a" id="tagA"><b>Peel-off</b> gold foil lid</div>
+        <div class="tag tag-b" id="tagB"><b>10 g</b> in every spoon</div>
+      </div>
+    </div>
+    <div class="scroll-cue" id="scrollCue"><span>Scroll</span><i></i></div>
+  </div>
+</section>
+
+<!-- PROBLEM -->
+<section class="section problem" id="problem">
+  <div class="wrap">
+    <p class="eyebrow rv">The problem</p>
+    <h2 class="display h2 rv" data-split>Honey jars are <em>messy</em> and slow.</h2>
+    <div class="cards3">
+      <article class="card rv tilt" style="--d:.05s">
+        <div class="ico"><svg viewBox="0 0 24 24"><path d="M12 2s-7 8.5-7 13a7 7 0 0 0 14 0c0-4.5-7-13-7-13z"/></svg></div>
+        <h3>Sticky &amp; messy</h3><p>Honey drips down the jar and sticks to the spoon, the lid and your hands.</p>
+      </article>
+      <article class="card rv tilt" style="--d:.15s">
+        <div class="ico"><svg viewBox="0 0 24 24"><path d="M12 3v18M5 7h14M7 7l-3 7h6zM17 7l-3 7h6z"/></svg></div>
+        <h3>Hard to measure</h3><p>A jar never gives you the same amount twice. HoneyDip is exactly 10 g, every time.</p>
+      </article>
+      <article class="card rv tilt" style="--d:.25s">
+        <div class="ico"><svg viewBox="0 0 24 24"><rect x="5" y="7" width="14" height="13" rx="2"/><path d="M9 7V4h6v3"/></svg></div>
+        <h3>Hard to carry</h3><p>You cannot take a jar to the office, university or on a trip. A spoon fits in any bag.</p>
+      </article>
+    </div>
+    <div class="stat-band rv">
+      <span class="count" data-count="48" data-suffix="%">0%</span>
+      <p>of the people we surveyed said a honey jar is sticky and messy <small>(illustrative sample, n = 120)</small>.</p>
+    </div>
+  </div>
+</section>
+
+<!-- JAR SCENE (pinned, fills on scroll) -->
+<section class="jar-scene scene" id="product" data-scene="jar">
+  <div class="sticky">
+    <div class="hex-bg" aria-hidden="true"></div>
+    <div class="wrap jar-grid">
+      <div class="jar-copy">
+        <p class="eyebrow">Meet HoneyDip</p>
+        <div class="stages">
+          <div class="stage"><h2 class="display h2">Exactly <em>10 grams</em>.</h2><p>Every spoon is filled by a piston filler and checked by weight, so you get the same amount of honey every time.</p></div>
+          <div class="stage"><h2 class="display h2">Sealed in <em>gold foil</em>.</h2><p>A heat-sealed, peel-off foil lid keeps the honey clean and fresh until the moment you use it.</p></div>
+          <div class="stage"><h2 class="display h2"><em>Pure</em> honey only.</h2><p>Sidr (Beri) and Acacia honey from tested beekeepers in KP and Punjab. Nothing added.</p></div>
+          <div class="stage"><h2 class="display h2">10 spoons, <em>Rs 399</em>.</h2><p>About Rs 40 a spoon. Keep a pack at home, at work or in your bag.</p></div>
+        </div>
+        <div class="meter"><span>Jar filled</span><b id="fillPct">0%</b><i><em id="fillBar"></em></i></div>
+      </div>
+      <div class="jar-wrap" aria-label="Honey jar filling up as you scroll" role="img">
+        <div class="jar" id="jar">
+          <img src="assets/jar-back.webp" alt="" class="jl">
+          <div class="honey-clip" id="honeyClip"><img src="assets/jar-honey.webp" alt="" class="jl"></div>
+          <div class="stream" id="stream"></div>
+          <img src="assets/surface.webp" alt="" class="surface" id="surface">
+          <img src="assets/jar-front.webp" alt="" class="jl">
+          <img src="assets/jar-dipper.webp" alt="" class="jl">
+          <img src="assets/drop.webp" alt="" class="drop" id="drop">
+          <img src="assets/sparkle.webp" alt="" class="spark s1">
+          <img src="assets/sparkle.webp" alt="" class="spark s2">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS (horizontal on desktop) -->
+<section class="how scene" id="how" data-scene="how">
+  <div class="sticky">
+    <div class="how-head wrap">
+      <p class="eyebrow">How it works</p>
+      <h2 class="display h2">Peel. Dip. Stir. <em>Sip.</em></h2>
+    </div>
+    <div class="track" id="track">
+      <article class="panel">
+        <span class="num">01</span>
+        <div class="p-ico"><svg viewBox="0 0 48 48"><path d="M10 30c6-14 22-18 28-12M30 12l8 6-6 8"/></svg></div>
+        <h3>Peel</h3><p>Pull the tab and peel off the gold foil lid.</p>
+      </article>
+      <article class="panel">
+        <span class="num">02</span>
+        <div class="p-ico"><svg viewBox="0 0 48 48"><ellipse cx="24" cy="14" rx="9" ry="6"/><path d="M24 20v22M10 34h28"/></svg></div>
+        <h3>Dip</h3><p>Dip the spoon into tea, milk or warm water.</p>
+      </article>
+      <article class="panel">
+        <span class="num">03</span>
+        <div class="p-ico"><svg viewBox="0 0 48 48"><path d="M36 18a13 13 0 1 0 2 10M36 8v10H26"/></svg></div>
+        <h3>Stir</h3><p>Stir for a few seconds until the honey dissolves.</p>
+      </article>
+      <article class="panel">
+        <span class="num">04</span>
+        <div class="p-ico"><svg viewBox="0 0 48 48"><path d="M8 18h26v10a11 11 0 0 1-11 11h-4A11 11 0 0 1 8 28zM34 21h3a5 5 0 0 1 0 10h-3M15 6c-2 3 2 5 0 8M23 6c-2 3 2 5 0 8"/></svg></div>
+        <h3>Sip</h3><p>Enjoy your drink and throw the spoon away.</p>
+      </article>
+      <article class="panel panel-img">
+        <img src="assets/spoons.webp" alt="Two HoneyDip spoons: one sealed with the gold foil lid and one open showing the honey" loading="lazy" width="1298" height="600">
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ANATOMY -->
+<section class="section anatomy">
+  <div class="wrap">
+    <p class="eyebrow rv">Inside every pack</p>
+    <h2 class="display h2 rv" data-split>Small spoon. <em>Big</em> convenience.</h2>
+    <div class="anat" id="anat">
+      <img src="assets/spoons.webp" alt="HoneyDip spoons" loading="lazy" class="anat-img" width="1298" height="600">
+      <svg class="lines" viewBox="0 0 1000 460" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M170 120 L170 30 L330 30"/><path d="M330 330 L330 430 L520 430"/><path d="M800 260 L880 120 L990 120"/>
+      </svg>
+      <div class="callout c1"><b>Peel-off gold foil</b><span>Heat-sealed, logo printed</span></div>
+      <div class="callout c2"><b>10 g pure honey</b><span>Moisture below 20%</span></div>
+      <div class="callout c3"><b>Food-grade PP spoon</b><span>Deep 10 ml bowl</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- RESEARCH -->
+<section class="section research" id="research">
+  <div class="wrap">
+    <p class="eyebrow rv">Research</p>
+    <h2 class="display h2 rv" data-split>What people <em>told</em> us.</h2>
+    <p class="note rv">Google Form and paper questionnaire. Figures below are an illustrative sample (n = 120) until the full Google Form results are added.</p>
+    <div class="research-grid">
+      <div class="panel-box rv">
+        <h3>Biggest problem with a honey jar</h3>
+        <div class="bars">
+          <div class="bar" style="--v:48"><span>Sticky &amp; messy</span><i><em></em></i><b>48%</b></div>
+          <div class="bar" style="--v:22"><span>Hard to measure</span><i><em></em></i><b>22%</b></div>
+          <div class="bar" style="--v:20"><span>Can't carry outside</span><i><em></em></i><b>20%</b></div>
+          <div class="bar" style="--v:10"><span>No problem</span><i><em></em></i><b>10%</b></div>
+        </div>
+      </div>
+      <div class="panel-box rv donut-box" style="--d:.1s">
+        <h3>Would you buy pre-filled spoons?</h3>
+        <svg class="donut" viewBox="0 0 120 120"><circle cx="60" cy="60" r="48" class="d-bg"/><circle cx="60" cy="60" r="48" class="d-fg" style="--v:68"/><circle cx="60" cy="60" r="48" class="d-fg2" style="--v:22;--o:68"/></svg>
+        <div class="donut-num"><span class="count" data-count="68" data-suffix="%">0%</span><small>said yes</small></div>
+        <ul class="legend"><li><i class="l1"></i>Yes 68%</li><li><i class="l2"></i>Maybe 22%</li><li><i class="l3"></i>No 10%</li></ul>
+      </div>
+      <div class="panel-box rv" style="--d:.2s">
+        <h3>Fair price for 10 spoons</h3>
+        <div class="bars">
+          <div class="bar" style="--v:25"><span>Below Rs 300</span><i><em></em></i><b>25%</b></div>
+          <div class="bar hl" style="--v:45"><span>Rs 300–400</span><i><em></em></i><b>45%</b></div>
+          <div class="bar" style="--v:22"><span>Rs 400–500</span><i><em></em></i><b>22%</b></div>
+          <div class="bar" style="--v:8"><span>Above Rs 500</span><i><em></em></i><b>8%</b></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- QUALITY -->
+<section class="quality scene" id="quality" data-scene="quality">
+  <div class="sticky">
+    <div class="wrap q-grid">
+      <div class="pdca" aria-hidden="true">
+        <div class="ring" id="ring"><span class="q q1">Plan</span><span class="q q2">Do</span><span class="q q3">Check</span><span class="q q4">Act</span></div>
+        <div class="pdca-core"><b>TQM</b><small>in every batch</small></div>
+      </div>
+      <div class="q-copy">
+        <p class="eyebrow">Quality</p>
+        <h2 class="display h2">Quality built into <em>every</em> spoon.</h2>
+        <ul class="q-list" id="qList">
+          <li><b>Plan</b> 10 g per spoon, moisture below 20%, sealed lids</li>
+          <li><b>Do</b> Hygienic filling room, gloves and hair nets</li>
+          <li><b>Check</b> Hourly weight and seal-leak tests</li>
+          <li><b>Act</b> Fix defects fast and use customer feedback</li>
+        </ul>
+        <p class="small-mute">Sindh Food Authority licence · HACCP · batch codes for full traceability</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICE -->
+<section class="section price" id="price">
+  <div class="wrap price-grid">
+    <div>
+      <p class="eyebrow rv">Price</p>
+      <h2 class="display h2 rv" data-split>One pack. <em>Ten</em> sweet moments.</h2>
+      <p class="lead rv">Most people in our survey said Rs 300–400 is a fair price for 10 spoons, so HoneyDip sells at Rs 399.</p>
+      <div class="audience rv" aria-label="Made for">
+        <div class="marquee"><div class="mq">
+          <span>Students</span><span>Office workers</span><span>Health-conscious people</span><span>Families</span><span>Travellers</span><span>Cafés &amp; hotels</span>
+          <span>Students</span><span>Office workers</span><span>Health-conscious people</span><span>Families</span><span>Travellers</span><span>Cafés &amp; hotels</span>
+        </div></div>
+      </div>
+    </div>
+    <div class="price-card rv tilt" id="priceCard">
+      <div class="shine" aria-hidden="true"></div>
+      <p class="pc-k">HoneyDip pack</p>
+      <div class="pc-price"><small>Rs</small><span class="count" data-count="399">0</span></div>
+      <p class="pc-sub">10 spoons × 10 g pure honey</p>
+      <ul>
+        <li>About Rs 40 per spoon</li>
+        <li>Sealed, hygienic portions</li>
+        <li>Supermarkets, online and offices</li>
+      </ul>
+      <a class="btn btn-gold btn-block magnetic" href="#order" data-link>Order now</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOUNDER -->
+<section class="section founder">
+  <div class="wrap founder-card rv">
+    <img src="assets/khalil.webp" alt="Muhammad Khalil" width="400" height="400" loading="lazy">
+    <div>
+      <p class="eyebrow">The idea behind HoneyDip</p>
+      <blockquote class="display">“I wanted honey to be as easy as a sugar sachet: clean, exact and ready to go.”</blockquote>
+      <p class="sig"><b>Muhammad Khalil</b> · Product launch project, Total Quality Management · University of Karachi</p>
+    </div>
+  </div>
+</section>
+
+<!-- ORDER -->
+<section class="order" id="order">
+  <div class="hex-bg" aria-hidden="true"></div>
+  <div class="wrap order-in">
+    <p class="eyebrow rv">Order</p>
+    <h2 class="display order-title rv" data-split>Peel. Dip. Stir. <em>Sip.</em></h2>
+    <p class="lead rv">Order HoneyDip for home, office or your café. Delivery across Karachi.</p>
+    <div class="order-cta rv">
+      <a class="btn btn-gold magnetic" id="waBtn" href="#" target="_blank" rel="noopener">Order on WhatsApp</a>
+      <a class="btn btn-ghost magnetic" id="mailBtn" href="#">Email us</a>
+    </div>
+    <img class="order-pack rv" src="assets/pack.webp" alt="" loading="lazy" width="1274" height="615">
+  </div>
+</section>
+</main>
+
+<footer class="footer">
+  <div class="wrap foot-row">
+    <a class="brand" href="#top" data-link><span class="brand-drop"></span><span>Honey<b>Dip</b></span></a>
+    <p>A product launch concept by Muhammad Khalil · Total Quality Management · University of Karachi · 2026</p>
+    <a href="#top" class="to-top" data-link aria-label="Back to top">↑</a>
+  </div>
+</footer>
+
+<script src="js/lenis.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
